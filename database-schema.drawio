@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2024-01-01T00:00:00.000Z" agent="5.0" etag="xxx" version="22.1.16" type="device">
+  <diagram name="Database Schema" id="database-schema">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Users Table -->
+        <mxCell id="users-table" value="users" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="users-id" value="id: UUID (PK)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="users-email" value="email: VARCHAR(255) UNIQUE NOT NULL" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="130" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="users-username" value="username: VARCHAR(100) UNIQUE NOT NULL" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="160" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="users-password" value="password_hash: VARCHAR(255) NOT NULL" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="190" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="users-public-key" value="public_key: TEXT NOT NULL" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="220" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="users-status" value="status: VARCHAR(20) DEFAULT 'offline'" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="250" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="users-last-seen" value="last_seen: TIMESTAMP" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="280" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="users-created" value="created_at: TIMESTAMP DEFAULT NOW()" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="310" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="users-updated" value="updated_at: TIMESTAMP DEFAULT NOW()" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="340" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="users-created-by" value="created_by: UUID (FK → users.id)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="370" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="users-updated-by" value="updated_by: UUID (FK → users.id)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="400" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Conversations Table -->
+        <mxCell id="conversations-table" value="conversations" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="conversations-id" value="id: UUID (PK)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="240" y="100" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="conversations-user1" value="user1_id: UUID (FK → users.id)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="240" y="130" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="conversations-user2" value="user2_id: UUID (FK → users.id)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="240" y="160" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="conversations-created" value="created_at: TIMESTAMP DEFAULT NOW()" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="240" y="190" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="conversations-updated" value="updated_at: TIMESTAMP DEFAULT NOW()" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="240" y="220" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="conversations-last-msg" value="last_message_at: TIMESTAMP" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="240" y="250" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="conversations-created-by" value="created_by: UUID (FK → users.id)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="240" y="280" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="conversations-updated-by" value="updated_by: UUID (FK → users.id)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="240" y="310" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Messages Table -->
+        <mxCell id="messages-table" value="messages" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="messages-id" value="id: UUID (PK)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="100" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="messages-conversation" value="conversation_id: UUID (FK → conversations.id)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="130" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="messages-parent" value="parent_message_id: UUID (FK → messages.id)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="160" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="messages-sender" value="sender_id: UUID (FK → users.id)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="190" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="messages-receiver" value="receiver_id: UUID (FK → users.id)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="220" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="messages-content" value="content: TEXT NOT NULL" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="250" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="messages-status" value="status: VARCHAR(20) DEFAULT 'sent'" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="280" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="messages-timestamp" value="timestamp: TIMESTAMP DEFAULT NOW()" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="310" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="messages-encrypted" value="is_encrypted: BOOLEAN DEFAULT TRUE" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="340" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="messages-created" value="created_at: TIMESTAMP DEFAULT NOW()" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="370" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="messages-updated" value="updated_at: TIMESTAMP DEFAULT NOW()" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="400" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="messages-created-by" value="created_by: UUID (FK → users.id)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="430" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="messages-updated-by" value="updated_by: UUID (FK → users.id)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="460" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- User Sessions Table -->
+        <mxCell id="sessions-table" value="user_sessions" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="sessions-id" value="id: UUID (PK)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="640" y="100" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="sessions-user" value="user_id: UUID (FK → users.id)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="640" y="130" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="sessions-token" value="token: TEXT NOT NULL" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="640" y="160" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="sessions-expires" value="expires_at: TIMESTAMP NOT NULL" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="640" y="190" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="sessions-created" value="created_at: TIMESTAMP DEFAULT NOW()" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="640" y="220" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="sessions-updated" value="updated_at: TIMESTAMP DEFAULT NOW()" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="640" y="250" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="sessions-created-by" value="created_by: UUID (FK → users.id)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="640" y="280" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="sessions-updated-by" value="updated_by: UUID (FK → users.id)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="640" y="310" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Notifications Table -->
+        <mxCell id="notifications-table" value="notifications" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="840" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="notifications-id" value="id: UUID (PK)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="840" y="100" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="notifications-user" value="user_id: UUID (FK → users.id)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="840" y="130" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="notifications-type" value="type: VARCHAR(20) NOT NULL" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="840" y="160" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="notifications-message" value="message_id: UUID (FK → messages.id)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="840" y="190" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="notifications-content" value="content: TEXT" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="840" y="220" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="notifications-read" value="is_read: BOOLEAN DEFAULT FALSE" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="840" y="250" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="notifications-created" value="created_at: TIMESTAMP DEFAULT NOW()" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="840" y="280" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="notifications-updated" value="updated_at: TIMESTAMP DEFAULT NOW()" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="840" y="310" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="notifications-created-by" value="created_by: UUID (FK → users.id)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="840" y="340" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="notifications-updated-by" value="updated_by: UUID (FK → users.id)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="840" y="370" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Relationships -->
+        <!-- Users to Conversations -->
+        <mxCell id="rel1" value="" style="endArrow=ERzeroToMany;endFill=1;endSize=24;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="users-table" target="conversations-table">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="200" y="70" as="sourcePoint" />
+            <mxPoint x="360" y="70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Users to Conversations (user2) -->
+        <mxCell id="rel2" value="" style="endArrow=ERzeroToMany;endFill=1;endSize=24;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="users-table" target="conversations-table">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="200" y="70" as="sourcePoint" />
+            <mxPoint x="360" y="70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Conversations to Messages -->
+        <mxCell id="rel3" value="" style="endArrow=ERoneToMany;endFill=1;endSize=24;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="conversations-table" target="messages-table">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="400" y="70" as="sourcePoint" />
+            <mxPoint x="560" y="70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Messages to Messages (threading) -->
+        <mxCell id="rel4" value="" style="endArrow=ERzeroToMany;endFill=1;endSize=24;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="messages-table" target="messages-table">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="500" y="460" as="sourcePoint" />
+            <mxPoint x="500" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Users to Messages (sender) -->
+        <mxCell id="rel5" value="" style="endArrow=ERzeroToMany;endFill=1;endSize=24;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="users-table" target="messages-table">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="200" y="70" as="sourcePoint" />
+            <mxPoint x="560" y="70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Users to Messages (receiver) -->
+        <mxCell id="rel6" value="" style="endArrow=ERzeroToMany;endFill=1;endSize=24;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="users-table" target="messages-table">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="200" y="70" as="sourcePoint" />
+            <mxPoint x="560" y="70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Users to Sessions -->
+        <mxCell id="rel7" value="" style="endArrow=ERoneToMany;endFill=1;endSize=24;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="users-table" target="sessions-table">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="200" y="70" as="sourcePoint" />
+            <mxPoint x="640" y="70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Users to Notifications -->
+        <mxCell id="rel8" value="" style="endArrow=ERzeroToMany;endFill=1;endSize=24;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="users-table" target="notifications-table">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="200" y="70" as="sourcePoint" />
+            <mxPoint x="840" y="70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Messages to Notifications -->
+        <mxCell id="rel9" value="" style="endArrow=ERoneToMany;endFill=1;endSize=24;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="messages-table" target="notifications-table">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="600" y="70" as="sourcePoint" />
+            <mxPoint x="840" y="70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Users to Users (audit fields) -->
+        <mxCell id="rel10" value="" style="endArrow=ERzeroToMany;endFill=1;endSize=24;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="users-table" target="users-table">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="100" y="400" as="sourcePoint" />
+            <mxPoint x="100" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Legend -->
+        <mxCell id="legend" value="Legend" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="500" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend-pk" value="Primary Key" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="540" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend-fk" value="Foreign Key" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="570" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend-regular" value="Regular Field" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="600" width="120" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Table Descriptions -->
+        <mxCell id="desc-users" value="Stores user account information including public keys for E2EE and audit fields" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="40" y="420" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="desc-conversations" value="Manages 1-on-1 chat sessions between users with audit tracking" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="240" y="420" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="desc-messages" value="Encrypted message content with conversation grouping and threading support" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="440" y="420" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="desc-sessions" value="JWT session management for authenticated users with audit tracking" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="640" y="420" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="desc-notifications" value="Web push notifications and in-app notification tracking with audit fields" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="840" y="420" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
