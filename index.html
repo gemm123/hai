@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hai - Secure Chat</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'hai-blue': '#1e40af',
+                        'hai-dark': '#0f172a',
+                        'hai-light': '#f8fafc',
+                        'hai-accent': '#3b82f6'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-hai-dark via-slate-900 to-hai-dark min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white/10 backdrop-blur-md border-b border-white/20 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-hai-blue to-hai-accent rounded-lg flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-white text-xl"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold text-white">Hai</h1>
+                    <span class="text-xs bg-green-500 text-white px-2 py-1 rounded-full">Secure</span>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg transition-all duration-200 flex items-center space-x-2">
+                        <i class="fas fa-user-circle"></i>
+                        <span>John Doe</span>
+                    </button>
+                    <button class="bg-red-500/20 hover:bg-red-500/30 text-red-400 px-4 py-2 rounded-lg transition-all duration-200">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 h-[calc(100vh-12rem)]">
+            
+            <!-- Contacts Sidebar -->
+            <div class="lg:col-span-1 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-6">
+                <div class="mb-6">
+                    <h2 class="text-xl font-semibold text-white mb-4">Contacts</h2>
+                    <div class="relative">
+                        <input type="text" placeholder="Search contacts..." 
+                               class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-hai-accent">
+                        <i class="fas fa-search absolute right-3 top-3 text-white/60"></i>
+                    </div>
+                </div>
+                
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-3 p-3 bg-hai-accent/20 rounded-lg border border-hai-accent/30">
+                        <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                            <span class="text-white font-semibold">S</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-white font-medium">Sarah Wilson</h3>
+                            <p class="text-white/60 text-sm">Online</p>
+                        </div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-3 p-3 hover:bg-white/10 rounded-lg transition-all duration-200 cursor-pointer">
+                        <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
+                            <span class="text-white font-semibold">M</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-white font-medium">Mike Chen</h3>
+                            <p class="text-white/60 text-sm">Last seen 2h ago</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-3 p-3 hover:bg-white/10 rounded-lg transition-all duration-200 cursor-pointer">
+                        <div class="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center">
+                            <span class="text-white font-semibold">E</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-white font-medium">Emma Davis</h3>
+                            <p class="text-white/60 text-sm">Last seen 1d ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chat Area -->
+            <div class="lg:col-span-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 flex flex-col">
+                
+                <!-- Chat Header -->
+                <div class="p-6 border-b border-white/20">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                            <span class="text-white font-semibold text-lg">S</span>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-semibold text-white">Sarah Wilson</h2>
+                            <p class="text-green-400 text-sm flex items-center">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                                Online
+                            </p>
+                        </div>
+                        <div class="ml-auto flex space-x-2">
+                            <button class="p-2 hover:bg-white/10 rounded-lg transition-all duration-200">
+                                <i class="fas fa-phone text-white/60"></i>
+                            </button>
+                            <button class="p-2 hover:bg-white/10 rounded-lg transition-all duration-200">
+                                <i class="fas fa-video text-white/60"></i>
+                            </button>
+                            <button class="p-2 hover:bg-white/10 rounded-lg transition-all duration-200">
+                                <i class="fas fa-ellipsis-v text-white/60"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Messages -->
+                <div class="flex-1 p-6 overflow-y-auto space-y-4">
+                    <!-- Received Message -->
+                    <div class="flex justify-start">
+                        <div class="max-w-xs lg:max-w-md">
+                            <div class="bg-white/20 backdrop-blur-sm rounded-2xl rounded-tl-sm px-4 py-3">
+                                <p class="text-white">Hey! How's the new project going? I've been working on some interesting encryption algorithms lately.</p>
+                                <div class="flex items-center justify-between mt-2">
+                                    <span class="text-white/60 text-xs">2:34 PM</span>
+                                    <div class="flex items-center space-x-1">
+                                        <i class="fas fa-check-double text-blue-400 text-xs"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sent Message -->
+                    <div class="flex justify-end">
+                        <div class="max-w-xs lg:max-w-md">
+                            <div class="bg-gradient-to-r from-hai-blue to-hai-accent rounded-2xl rounded-tr-sm px-4 py-3">
+                                <p class="text-white">It's going great! I'm implementing the WebSocket connection for real-time messaging. The encryption part is next on my list.</p>
+                                <div class="flex items-center justify-between mt-2">
+                                    <span class="text-white/60 text-xs">2:36 PM</span>
+                                    <div class="flex items-center space-x-1">
+                                        <i class="fas fa-check-double text-white text-xs"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Received Message -->
+                    <div class="flex justify-start">
+                        <div class="max-w-xs lg:max-w-md">
+                            <div class="bg-white/20 backdrop-blur-sm rounded-2xl rounded-tl-sm px-4 py-3">
+                                <p class="text-white">That sounds exciting! Are you using libsodium for the E2EE implementation?</p>
+                                <div class="flex items-center justify-between mt-2">
+                                    <span class="text-white/60 text-xs">2:37 PM</span>
+                                    <div class="flex items-center space-x-1">
+                                        <i class="fas fa-check-double text-blue-400 text-xs"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Typing Indicator -->
+                    <div class="flex justify-start">
+                        <div class="bg-white/20 backdrop-blur-sm rounded-2xl rounded-tl-sm px-4 py-3">
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-white/60 rounded-full animate-bounce"></div>
+                                <div class="w-2 h-2 bg-white/60 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                                <div class="w-2 h-2 bg-white/60 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Message Input -->
+                <div class="p-6 border-t border-white/20">
+                    <div class="flex items-center space-x-4">
+                        <button class="p-3 hover:bg-white/10 rounded-lg transition-all duration-200">
+                            <i class="fas fa-paperclip text-white/60"></i>
+                        </button>
+                        <div class="flex-1 relative">
+                            <input type="text" placeholder="Type your message..." 
+                                   class="w-full bg-white/10 border border-white/20 rounded-2xl px-4 py-3 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-hai-accent">
+                            <button class="absolute right-3 top-3 p-1 hover:bg-white/10 rounded-lg transition-all duration-200">
+                                <i class="fas fa-smile text-white/60"></i>
+                            </button>
+                        </div>
+                        <button class="bg-gradient-to-r from-hai-blue to-hai-accent hover:from-hai-accent hover:to-hai-blue text-white px-6 py-3 rounded-2xl transition-all duration-200 flex items-center space-x-2">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Send</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Security Status Bar -->
+    <div class="fixed bottom-4 right-4 bg-green-500/20 backdrop-blur-md border border-green-500/30 rounded-lg px-4 py-2">
+        <div class="flex items-center space-x-2">
+            <i class="fas fa-shield-alt text-green-400"></i>
+            <span class="text-green-400 text-sm font-medium">End-to-End Encrypted</span>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Message input handling
+            const messageInput = document.querySelector('input[placeholder="Type your message..."]');
+            const sendButton = document.querySelector('button:has(.fa-paper-plane)');
+            
+            messageInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            sendButton.addEventListener('click', sendMessage);
+            
+            function sendMessage() {
+                const message = messageInput.value.trim();
+                if (message) {
+                    // Add message to chat (this would normally send to backend)
+                    addMessage(message, true);
+                    messageInput.value = '';
+                }
+            }
+            
+            function addMessage(text, isSent) {
+                const messagesContainer = document.querySelector('.overflow-y-auto');
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `flex ${isSent ? 'justify-end' : 'justify-start'}`;
+                
+                const time = new Date().toLocaleTimeString('en-US', { 
+                    hour: 'numeric', 
+                    minute: '2-digit',
+                    hour12: true 
+                });
+                
+                messageDiv.innerHTML = `
+                    <div class="max-w-xs lg:max-w-md">
+                        <div class="${isSent ? 'bg-gradient-to-r from-hai-blue to-hai-accent' : 'bg-white/20 backdrop-blur-sm'} rounded-2xl ${isSent ? 'rounded-tr-sm' : 'rounded-tl-sm'} px-4 py-3">
+                            <p class="text-white">${text}</p>
+                            <div class="flex items-center justify-between mt-2">
+                                <span class="text-white/60 text-xs">${time}</span>
+                                <div class="flex items-center space-x-1">
+                                    <i class="fas fa-check-double ${isSent ? 'text-white' : 'text-blue-400'} text-xs"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                messagesContainer.appendChild(messageDiv);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+        });
+    </script>
+</body>
+</html>
